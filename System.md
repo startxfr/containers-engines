@@ -2,11 +2,11 @@
 
 
 Guideline on how to provision and setup various systems environments on 
-[physical OS](#physical-system), [virtual OS](#virtual-system) or 
-[AWS OS](#aws-system).
+[physical OS](#physical-infrastructure), [virtual OS](#virtual-infrastructure) or 
+[AWS OS](#aws-infrastructure).
 
 
-## Physical system
+## Physical infrastructure
 
 
 ### Pre installation
@@ -40,7 +40,7 @@ ansible localhost --list-hosts
 ```
 
 
-## Virtual system
+## Virtual infrastructure
 
 
 ### Pre installation
@@ -75,7 +75,7 @@ ansible localhost --list-hosts
 ```
 
 
-## AWS system
+## AWS infrastructure
 
 
 ### Pre installation

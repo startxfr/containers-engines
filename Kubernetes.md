@@ -1,27 +1,73 @@
 # containers-engines : Kubernetes
 
 
-Documentation and installation guide to setup a kubernetes runtime
-and execute container images.
-
-
-## Purpose
-
-This project is focused on how to install kubernetes tools under
+Documentation and installation guide to install kubernetes tools under
 a Centos 7 environement.
 
 
 ## Requirements
 
 - Having a basic knowledge of linux command line interface
-- Having access to your system environment
+- Having access to your system environment (see [system install](System.md) 
+  if you don't already have a compliant system)
 
 
-## Local installation 
+## Physical infrastructure 
 
-Local installation of S2I runtime mean you must be logged to a console in your
-targeted system. (see provision [physical OS](System.md#physical-system), 
-[virtual OS](System.md#virtual-system) or [AWS OS](System.md#aws-system))
+Physical infrastructure installation of S2I runtime mean you must be logged to a console
+in your system. (see [provision physical OS](System.md#physical-infrastructure)))
+
+
+### Pre installation
+
+*Kubernetes runtime has no pre-installation tasks.*
+
+
+### Installation
+
+*Kubernetes runtime has no installation tasks.*
+
+
+### Post installation
+
+*Kubernetes runtime has no post-installation tasks.*
+
+
+### Check installation
+
+*Kubernetes runtime has no check-installation tasks.*
+
+
+## Virtual infrastructure 
+
+Virtual infrastructure installation of S2I runtime mean you must be logged to a 
+console in your system. (see [provision virtual OS](System.md#virtual-infrastructure))
+
+
+### Pre installation
+
+*Kubernetes runtime has no pre-installation tasks.*
+
+
+### Installation
+
+*Kubernetes runtime has no installation tasks.*
+
+
+### Post installation
+
+*Kubernetes runtime has no post-installation tasks.*
+
+
+### Check installation
+
+*Kubernetes runtime has no check-installation tasks.*
+
+
+## AWS infrastructure 
+
+AWS infrastructure installation of S2I runtime mean you must be logged to a 
+console in your system. (see [provision AWS OS](System.md#aws-infrastructure))
 
 
 ### Pre installation
