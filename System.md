@@ -146,9 +146,41 @@ ansible-playbook playbooks/system/pre-install.yml
 
 ### Centos
 
+#### Supported releases
+
+Centos 7  or Centos 8 releases are both supported for theses guides and our installations scripts.
+
+#### Usefull links
+
+- [Create a bootable Centos USB key](https://wiki.centos.org/HowTos/InstallFromUSBkey)
+- [Download Centos7 ISO image](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso)
+- [Fast track course on Centos](https://www.freecodecamp.org/news/getting-started-with-centos-15eac7215c99)
+
+
 ### Fedora
 
+#### Supported releases
+
+Fedora Core 29 and 30 releases are both supported for theses guides and our installations scripts.
+
+#### Usefull links
+
+- [Create a bootable Fedora USB key](https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB/fr)
+- [Download Center for Fedora ISO image](https://getfedora.org/fr/workstation/download/)
+- [What's new in Fedora 30](https://fedoramagazine.org/whats-new-fedora-30-workstation/)
+
+
 ### RHEL
+
+#### Supported releases
+
+RHEL 7  or RHEL 8 releases are both supported for theses guides and our installations scripts.
+
+#### Usefull links
+
+- [Create a bootable RHEL USB key](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-making-usb-media)
+- [Download Center for RHEL ISO image](https://access.redhat.com/documentation/fr-fr/red_hat_enterprise_linux/7/html/installation_guide/chap-download-red-hat-enterprise-linux)
+- [What's new in RHEL 8](https://www.techrepublic.com/article/whats-new-with-red-hat-enterprise-linux-8-and-red-hat-virtualization/)
 
 
 

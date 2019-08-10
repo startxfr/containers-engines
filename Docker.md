@@ -2,7 +2,7 @@
 
 
 Documentation and installation guide on how to install docker and docker-compose 
-tools under a RedHat like distribution environement (see [system guide](System.md#Supported operating systems) 
+tools under a RedHat like distribution environement (see [system guide](System.md#supported-operating-systems) 
 for more information on supported [infrastructure plateforms](System.md) and [operating systems](System.md#supported-operating-systems)).
 
 
