@@ -22,21 +22,33 @@ Guideline on how to provision and setup various systems environments on
 ```
 su root
 yum update -y
-yum install -y ansible
+yum install -y ansible git
+git clone https://github.com/startxfr/containers-engines.git
+cd containers-engines/resources/ansible
+ansible-playbook playbooks/system/pre-install.yml
+```
+
+### Installation
+
+- Execute the installation playbook to get an updated system with basic tools
+  installed.
+```
+ansible-playbook playbooks/system/install.yml
 ```
 
 ### Post installation
 
-- Clean yum database and cached packages
+- Execute the post-installation playbook to get an updated system with basic tools
+  installed.
 ```
-yum clean all
+ansible-playbook playbooks/system/post-install.yml
 ```
 
 ### Check installation
 
-- Test if ansible is working
+- Execute the check playbook to get informations about your installation success.
 ```
-ansible localhost --list-hosts
+ansible-playbook playbooks/system/check.yml
 ```
 
 
@@ -45,11 +57,8 @@ ansible localhost --list-hosts
 
 ### Pre installation
 
-- having access to a KVM based virtual hypervisor (RHEV, OVirt) or as simple
-hypervisor console such as Machine.
-
-### Installation
-
+- having access to a KVM based virtual hypervisor (RHEV, OVirt, QEMU) or 
+  Virtualbox.
 - Boot a minimal ISO install image ([centos](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso)
   or [fedora](https://getfedora.org/fr/workstation/download/))
 - Execute a minimal installation following the OS installation guide
@@ -57,21 +66,33 @@ hypervisor console such as Machine.
 ```
 su root
 yum update -y
-yum install -y ansible
+yum install -y ansible git
+git clone https://github.com/startxfr/containers-engines.git
+cd containers-engines/resources/ansible
+ansible-playbook playbooks/system/pre-install.yml
+```
+
+### Installation
+
+- Execute the installation playbook to get an updated system with basic tools
+  installed.
+```
+ansible-playbook playbooks/system/install.yml
 ```
 
 ### Post installation
 
-- Clean yum database and cached packages
+- Execute the post-installation playbook to get an updated system with basic tools
+  installed.
 ```
-yum clean all
+ansible-playbook playbooks/system/post-install.yml
 ```
 
 ### Check installation
 
-- Test if ansible is working
+- Execute the check playbook to get informations about your installation success.
 ```
-ansible localhost --list-hosts
+ansible-playbook playbooks/system/check.yml
 ```
 
 
@@ -93,19 +114,31 @@ ansible localhost --list-hosts
 ```
 su root
 yum update -y
-yum install -y ansible
+yum install -y ansible git
+git clone https://github.com/startxfr/containers-engines.git
+cd containers-engines/resources/ansible
+ansible-playbook playbooks/system/pre-install.yml
+```
+
+### Installation
+
+- Execute the installation playbook to get an updated system with basic tools
+  installed.
+```
+ansible-playbook playbooks/system/install.yml
 ```
 
 ### Post installation
 
-- Clean yum database and cached packages
+- Execute the post-installation playbook to get an updated system with basic tools
+  installed.
 ```
-yum clean all
+ansible-playbook playbooks/system/post-install.yml
 ```
 
 ### Check installation
 
-- Test if ansible is working
+- Execute the check playbook to get informations about your installation success.
 ```
-ansible localhost --list-hosts
+ansible-playbook playbooks/system/check.yml
 ```

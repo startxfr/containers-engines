@@ -1,0 +1,19 @@
+- name: "Install system tools and environment"
+  hosts: 'all'
+  gather_facts: false
+  remote_user: startx
+  become_method: sudo
+  become: yes
+  tasks:
+  - name: Update installed packages
+    shell: yum update -y
+  - name: Ensure basic tools are presents
+    yum:
+      name:
+        - bash-completion
+        - git
+        - curl
+        - wget
+      state: present
+  - name: Clean package cache
+    shell: yum clean all

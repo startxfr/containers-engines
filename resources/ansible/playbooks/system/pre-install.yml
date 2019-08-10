@@ -1,0 +1,23 @@
+- name: "Pre-Install system tools and environment"
+  hosts: 'all'
+  gather_facts: false
+  vars:
+    user_name: startx
+    group_name: startx
+  tasks:
+  - name: Ensure group '{{ group_name }}' exists
+    group:
+      name: "{{ group_name }}"
+      state: present
+  - name: Ensure user '{{ user_name }}' exists
+    user:
+      name: '{{ user_name }}'
+      comment: '{{ user_name }}'
+      group: '{{ group_name }}'
+  - name: Ensure group '{{ group_name }}' have passwordless sudo"
+    lineinfile:
+      dest: /etc/sudoers
+      state: present
+      regexp: '^%{{ group_name }}'
+      line: '%{{ group_name }} ALL=(ALL) NOPASSWD: ALL'
+      validate: 'visudo -cf %s'
