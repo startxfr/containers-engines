@@ -1,0 +1,6 @@
+- name: "Post-Install S2I tools and environment"
+  hosts: 'all'
+  gather_facts: false
+  remote_user: startx
+  become_method: sudo
+  become: yes

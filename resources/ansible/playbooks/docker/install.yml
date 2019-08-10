@@ -15,10 +15,10 @@
     docker_users:
       - "{{ user_name }}"
   tasks:
-  - name: Install geerlingguy.pip role
+  - name: Ensure geerlingguy.pip role is installed
     include_role: 
       name: geerlingguy.pip
-  - name: Install geerlingguy.docker role
+  - name: Ensure geerlingguy.docker role is installed
     include_role: 
       name: geerlingguy.docker
   - name: Ensure docker service is running

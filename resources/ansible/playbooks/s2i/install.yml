@@ -1,0 +1,21 @@
+- name: "Install S2I tools and environment"
+  hosts: 'all'
+  gather_facts: true
+  remote_user: startx
+  become_method: sudo
+  become: yes
+  vars:
+    s2i_release: 1.1.14
+    s2i_release_version: "v{{s2i_release}}-874754de"
+    s2i_source_repo: https://github.com/openshift/source-to-image
+    s2i_source_binary: "{{s2i_source_repo}}/releases/download/v{{s2i_release}}/source-to-image-{{s2i_release_version}}-linux-386.tar.gz"
+  tasks:
+  - name: Install source to image {{ s2i_release_version }} binary 
+    unarchive:
+      src: "{{s2i_source_binary}}"
+      dest: /usr/local/bin
+      remote_src: yes
+  - name: Ensure s2i command is executable
+    file:
+      path: /usr/local/bin/s2i
+      mode: '0755'

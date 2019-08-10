@@ -1,17 +1,20 @@
-- name: "Check podman installation"
+- name: "Check S2I installation"
   hosts: 'all'
   gather_facts: true
   remote_user: startx
   become_method: sudo
   vars:
-    container_name: podman-check
+    container_name: s2i-check
     container_image: startx/sv-apache:latest
     container_port: 8080
   tasks:
   - name: Pulling container image {{ container_image }}
     shell: podman pull {{ container_image }}
+  - name: Building container image {{ container_name }}
+    shell: s2i build . {{ container_image }} {{ container_name }}
   - name: run a test container based on {{ container_image }} image
     vars:
+      container_image: "{{ container_name }}"
       container_run_args: >-
         --rm
         -p {{ container_port }}:{{ container_port }}

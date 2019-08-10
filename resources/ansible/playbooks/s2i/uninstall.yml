@@ -1,0 +1,45 @@
+- name: "Uninstall S2I tools and environment"
+  hosts: 'all'
+  gather_facts: true
+  remote_user: startx
+  become_method: sudo
+  become: yes
+  tasks:
+  - name: Ensure docker service is stopped
+    systemd:
+      name: docker
+      state: stopped
+  - name: Uninstall docker with geerlingguy.docker role
+    include_role: 
+      name: geerlingguy.docker
+  - name: Ensure docker runtime packages are uninstalled
+    package:
+      name: 
+      - docker-{{ docker_edition }}
+      - docker-{{ docker_edition }}-cli
+      state: absent
+  - name: Uninstall roles from Ansible Galaxy
+    command: ansible-galaxy uninstall {{ item }}
+    with_items:
+      - ikke_t.podman_container_systemd
+      - geerlingguy.pip
+      - geerlingguy.docker
+  - name: Ensure S2I runtime packages are uninstalled
+    package:
+      name: 
+      - podman
+      - docker
+      - skopeo
+      state: absent
+  - name: Ensure Galaxy role for docker runtime are uninstalled
+    command: ansible-galaxy uninstall {{ item }}
+    with_items:
+      - geerlingguy.pip
+      - geerlingguy.docker
+  - name: Ensure s2i command is uninstalled
+    file:
+      path: /usr/local/bin/{{ item }}
+      state: absent
+    with_items:
+      - s2i
+      - sti

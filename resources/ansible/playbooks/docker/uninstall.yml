@@ -16,8 +16,14 @@
   - name: Uninstall docker with geerlingguy.docker role
     include_role: 
       name: geerlingguy.docker
-  - name: Uninstall roles from Ansible Galaxy
+  - name: Ensure Galaxy role for docker runtime are uninstalled
     command: ansible-galaxy uninstall {{ item }}
     with_items:
       - geerlingguy.pip
       - geerlingguy.docker
+  - name: Ensure docker runtime packages are uninstalled
+    package:
+      name: 
+      - docker-{{ docker_edition }}
+      - docker-{{ docker_edition }}-cli
+      state: absent
