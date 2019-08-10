@@ -14,6 +14,7 @@
         - git
         - curl
         - wget
+        - epel-release
       state: present
   - name: Clean package cache
     shell: yum clean all

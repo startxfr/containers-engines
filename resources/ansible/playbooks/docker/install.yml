@@ -1,16 +1,20 @@
 - name: "Install docker tools and environment"
   hosts: 'all'
-  gather_facts: false
+  gather_facts: true
   remote_user: startx
   become_method: sudo
   become: yes
+  vars:
+    pip_install_packages:
+      - name: docker
+    docker_edition: 'ce'
+    docker_service_state: started
+    docker_service_enabled: true
+    docker_install_compose: true
+    docker_compose_version: "1.22.0"
+    docker_users:
+      - "{{ user_name }}"
+  roles:
+    - geerlingguy.pip
+    - geerlingguy.docker
   tasks:
-  - name: Update installed packages
-    shell: yum update -y
-  - name: Ensure docker tools are presents
-    yum:
-      name:
-        - docker
-      state: present
-  - name: Clean package cache
-    shell: yum clean all

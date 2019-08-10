@@ -2,7 +2,8 @@
   hosts: 'all'
   gather_facts: false
   tasks:
-  - name: Ensure group '{{ group_name }}' exists
-    group:
-      name: "{{ group_name }}"
-      state: present
+  - name: Install roles from Ansible Galaxy
+    command: ansible-galaxy install {{ item }}
+    with_items:
+      - geerlingguy.pip
+      - geerlingguy.docker
