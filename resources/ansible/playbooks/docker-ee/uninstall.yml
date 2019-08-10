@@ -8,9 +8,14 @@
     docker_edition: 'ee'
     docker_package_state: absent
     docker_install_compose: false
-  roles:
-    - geerlingguy.docker
   tasks:
+  - name: Ensure docker service is stopped
+    systemd:
+      name: docker
+      state: stopped
+  - name: Uninstall docker with geerlingguy.docker role
+    include_role: 
+      name: geerlingguy.docker
   - name: Uninstall roles from Ansible Galaxy
     command: ansible-galaxy uninstall {{ item }}
     with_items:

@@ -14,7 +14,14 @@
     docker_compose_version: "1.22.0"
     docker_users:
       - "{{ user_name }}"
-  roles:
-    - geerlingguy.pip
-    - geerlingguy.docker
   tasks:
+  - name: Install geerlingguy.pip role
+    include_role: 
+      name: geerlingguy.pip
+  - name: Install geerlingguy.docker role
+    include_role: 
+      name: geerlingguy.docker
+  - name: Ensure docker service is running
+    systemd:
+      name: docker
+      state: started

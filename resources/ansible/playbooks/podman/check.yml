@@ -1,0 +1,26 @@
+- name: "Check podman installation"
+  hosts: 'all'
+  gather_facts: true
+  remote_user: startx
+  become_method: sudo
+  vars:
+    container_name: podman-check
+    container_image: startx/sv-apache:latest
+    container_port: 8080
+  tasks:
+  - name: Pulling container image {{ container_image }}
+    shell: podman pull {{ container_image }}
+  - name: run a test container based on {{ container_image }} image
+    vars:
+      container_image: "{{ container_image }}"
+      container_name: "{{ container_name }}"
+      container_run_args: >-
+        --rm
+        -p {{ container_name }}:{{ container_name }}
+      #container_state: absent
+      container_state: running
+      container_firewall_ports:
+        - "{{ container_name }}/tcp"
+        - "8443/tcp"
+    import_role:
+      name: ikke_t.podman_container_systemd

@@ -8,7 +8,7 @@
   - name: Update installed packages
     shell: yum update -y
   - name: Ensure basic tools are presents
-    yum:
+    package:
       name:
         - bash-completion
         - git
