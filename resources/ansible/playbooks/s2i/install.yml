@@ -10,8 +10,7 @@
     docker_edition: 'ce'
     docker_service_state: started
     docker_service_enabled: true
-    docker_install_compose: true
-    docker_compose_version: "1.22.0"
+    docker_install_compose: false
     docker_users:
       - "{{ user_name }}"
     s2i_release: 1.1.14
@@ -28,12 +27,12 @@
   - name: Ensure geerlingguy.pip role is installed
     include_role: 
       name: geerlingguy.pip
-  - name: Execute geerlingguy role's
+  - name: Execute geerlingguy.pip role
     include_role: 
-      name: "{{ item }}"
-    with_items:
-      - geerlingguy.pip
-      - geerlingguy.docker
+      name: "geerlingguy.pip"
+  - name: Execute geerlingguy.docker role
+    include_role: 
+      name: "geerlingguy.docker"
   - name: Ensure S2I runtime packages are installed
     package:
       name: 

@@ -1,0 +1,24 @@
+- name: "Check kubernetes installation"
+  hosts: 'all'
+  gather_facts: true
+  remote_user: startx
+  become_method: sudo
+  vars:
+    container_name: kubernetes-check
+    container_image: startx/sv-apache:latest
+    container_port: 8080
+  tasks:
+  - name: Pulling container image {{ container_image }}
+    shell: kubernetes pull {{ container_image }}
+  - name: run a test container based on {{ container_image }} image
+    vars:
+      container_run_args: >-
+        --rm
+        -p {{ container_port }}:{{ container_port }}
+      #container_state: absent
+      container_state: running
+      container_firewall_ports:
+        - "{{ container_port }}/tcp"
+        - "8443/tcp"
+    import_role:
+      name: ikke_t.kubernetes_container_systemd

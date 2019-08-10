@@ -9,6 +9,7 @@
     command: ansible-galaxy uninstall {{ item }}
     with_items:
       - ikke_t.podman_container_systemd
+    ignore_errors: yes
   - name: Ensure podman runtime packages are uninstalled
     package:
       name: 
@@ -16,3 +17,4 @@
       - podman-docker
       - skopeo
       state: absent
+    ignore_errors: yes

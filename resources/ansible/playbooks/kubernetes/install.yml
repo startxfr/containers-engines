@@ -1,0 +1,62 @@
+- name: "Pre-Install kubernetes inventory"
+  hosts: 'all'
+  gather_facts: true
+  remote_user: startx
+  become_method: sudo
+  become: yes
+  tasks:
+  - name: Generate kubernetes inventory
+    template:
+      src: "templates/host.yml.j2"
+      dest: "{{project_tmp_dir}}/resources/ansible/inventory/kubernetes.yml"
+- name: "Pre-Install kubernetes tools and environment"
+  hosts: 'all'
+  gather_facts: true
+  remote_user: startx
+  become_method: sudo
+  become: yes
+  vars:
+    pip_install_packages:
+      - name: docker
+    docker_edition: 'ce'
+    docker_service_state: started
+    docker_service_enabled: true
+    docker_install_compose: false
+    docker_users:
+      - "{{ user_name }}"
+    kubernetes_packages:
+    - name: kubelet
+      state: present
+    - name: kubectl
+      state: present
+    - name: kubeadm
+      state: present
+    - name: kubernetes-cni
+      state: present
+  tasks:
+  - name: Install roles from Ansible Galaxy
+    command: ansible-galaxy install {{ item }}
+    with_items:
+      - geerlingguy.pip
+      - geerlingguy.docker
+      - geerlingguy.kubernetes
+  - name: ensure kubernetes runtime packages are installed
+    package:
+      name: 
+      - podman
+      - podman-docker
+      - skopeo
+      state: present
+- name: "Install kubernetes tools and environment"
+  hosts: 'all'
+  gather_facts: true
+  remote_user: startx
+  become_method: sudo
+  become: yes
+  tasks:
+  - name: Execute geerlingguy.docker role
+    include_role: 
+      name: "geerlingguy.docker"
+  - name: Execute geerlingguy.kubernetes role
+    include_role: 
+      name: "geerlingguy.kubernetes"

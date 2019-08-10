@@ -7,6 +7,7 @@
   tasks:
   - name: Update installed packages
     shell: yum update -y
+    ignore_errors: yes
   - name: Ensure basic tools are presents
     package:
       name:
@@ -18,3 +19,4 @@
       state: present
   - name: Clean package cache
     shell: yum clean all
+    ignore_errors: yes

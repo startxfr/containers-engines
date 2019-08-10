@@ -13,17 +13,21 @@
     systemd:
       name: docker
       state: stopped
+    ignore_errors: yes
   - name: Uninstall docker with geerlingguy.docker role
     include_role: 
       name: geerlingguy.docker
+    ignore_errors: yes
   - name: Ensure Galaxy role for docker Enterprise runtime are uninstalled
     command: ansible-galaxy uninstall {{ item }}
     with_items:
       - geerlingguy.pip
       - geerlingguy.docker
+    ignore_errors: yes
   - name: Ensure docker Enterprise runtime packages are uninstalled
     package:
       name: 
       - docker-{{ docker_edition }}
       - docker-{{ docker_edition }}-cli
       state: absent
+    ignore_errors: yes

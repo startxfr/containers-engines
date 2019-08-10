@@ -13,9 +13,12 @@
         - curl
         - wget
       state: absent
+    ignore_errors: yes
   - name: Clean package cache
     shell: yum clean all
+    ignore_errors: yes
   - name: Remove {{ project_tmp_dir }}
     file:
       path: "{{ project_tmp_dir }}"
       state: absent
+    ignore_errors: yes

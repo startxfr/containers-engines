@@ -1,0 +1,36 @@
+- name: "Uninstall kubernetes tools and environment"
+  hosts: 'all'
+  gather_facts: true
+  remote_user: startx
+  become_method: sudo
+  become: yes
+  tasks:
+  - name: Execute geerlingguy.kubernetes role
+    command: kubeadm reset -f
+    ignore_errors: yes
+  - name: Uninstall roles from Ansible Galaxy
+    command: ansible-galaxy uninstall {{ item }}
+    with_items:
+      - geerlingguy.pip
+      - geerlingguy.docker
+      - geerlingguy.kubernetes
+    ignore_errors: yes
+  - name: Ensure kubernetes runtime packages are uninstalled
+    package:
+      name: 
+      - podman
+      - podman-docker
+      - skopeo
+      state: absent
+    ignore_errors: yes
+  - name: Remove kubernetes files
+    file:
+      path: "{{ item }}"
+      state: absent
+    with_items:
+      - /root/.kube
+      - /usr/bin/kubeadm
+      - /usr/bin/kubectl
+      - /usr/bin/kubelet
+      - "{{project_tmp_dir}}/resources/ansible/inventory/kubernetes.yml"
+    ignore_errors: yes
