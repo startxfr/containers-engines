@@ -8,15 +8,16 @@ and [openshift Enterprise](Openshift.md).
 
 ## Purpose
 
-This project is focused on how to get various container environment and run various 
-container deployment scenarios using simple or advanced features according to the
-provided engines.
+This project is focused on providing a set of guideline and scripts ready to use
+to help auditor geting various container environments. Theses runtimes are rady to use
+and users can immediatly run various container deployment scenarios using 
+simple or advanced features according to the engine you used.
 
 
 ## Audience
 
 - **Developpers** who whant to start building containers with easy to setup environment 
-  Architects who need to POC CI/CD chains, Software manufacturing workflows as well as
+- **Architects** who need to POC CI/CD chains, Software manufacturing workflows as well as
   Private PaaS or CaaS evaluations
 - **DevOps teammate** who need to quickly have a simple or complete Contaienr stack
   ready to use for the project
@@ -25,11 +26,12 @@ provided engines.
   of their containers runtimes.
 
 
-## Containers engines
+## Provided engines
 
 - [Installing Docker single host environement](Docker.md)
 - [Installing Podman single host environement](Podman.md)
 - [Installing S2I building environement](S2I.md)
+- [Installing Docker cluster environement](DockerEE.md)
 - [Installing Kubernetes cluster environement](Kubernetes.md)
 - [Installing Openshift cluster environement](Openshift.md)
 

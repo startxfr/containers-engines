@@ -1,22 +1,24 @@
 # containers-engines : Docker
 
 
-Documentation and installation guide to install docker and docker-compose tools under
-a Centos 7 environement.
+Documentation and installation guide on how to install docker and docker-compose 
+tools under a RedHat like distribution environement (see [system guide](System.md#Supported operating systems) 
+for more information on supported [infrastructure plateforms](System.md) and [operating systems](System.md#supported-operating-systems)).
 
 
 ## Requirements
 
 - Having a basic knowledge of linux command line interface
-- Having access to your system environment (see [system install](System.md) 
+- Having access to your system environment See [system install](System.md) 
   if you don't already have a compliant system according to your infrastructure 
-  environment)
+  ([physical](System.md#physical-infrastructure), [virtual](System.md#virtual-infrastructure)
+  or [AWS](System.md#aws-infrastructure))
 
 
 ## Physical infrastructure 
 
-Physical infrastructure installation of S2I runtime mean you must be logged to a console
-in your system. (see [howto provision physical OS](System.md#physical-infrastructure)))
+Physical infrastructure installation of Docker runtime mean you must be logged to a console
+in your system. (see [howto provision physical OS](System.md#physical-infrastructure))
 
 
 ### Pre installation
@@ -25,39 +27,27 @@ in your system. (see [howto provision physical OS](System.md#physical-infrastruc
   [provision physical OS guide](System.md#physical-infrastructure).
 - Login as `root` user
 - Move under the `/tmp/containers-engines/resources/ansible` directory
-- Execute the pre-installation playbook
-```
-ansible-playbook playbooks/docker/pre-install.yml
-```
+- Execute the pre-installation playbook `ansible-playbook playbooks/docker/pre-install.yml`
 
 
 ### Installation
 
-- Execute the installation playbook
-```
-ansible-playbook playbooks/docker/install.yml
-```
+- Execute the installation playbook by running `ansible-playbook playbooks/docker/install.yml` command.
 
 
 ### Post installation
 
-- Execute the post-installation playbook
-```
-ansible-playbook playbooks/docker/post-install.yml
-```
+- Execute the post-installation playbook by running `ansible-playbook playbooks/docker/post-install.yml` command.
 
 
 ### Check installation
 
-- Execute the check playbook to get informations about your installation success.
-```
-ansible-playbook playbooks/docker/check.yml
-```
+- Execute the check playbook by running `ansible-playbook playbooks/docker/check.yml` command.
 
 
 ## Virtual infrastructure 
 
-Virtual infrastructure installation of S2I runtime mean you must be logged to a 
+Virtual infrastructure installation of Docker runtime mean you must be logged to a 
 console in your system. (see [howto provision virtual OS](System.md#virtual-infrastructure))
 
 
@@ -67,39 +57,27 @@ console in your system. (see [howto provision virtual OS](System.md#virtual-infr
   [provision virtual OS guide](System.md#virtual-infrastructure).
 - Login as `root` user
 - Move under the `/tmp/containers-engines/resources/ansible` directory
-- Execute the pre-installation playbook
-```
-ansible-playbook playbooks/docker/pre-install.yml
-```
+- Execute the pre-installation playbook `ansible-playbook playbooks/docker/pre-install.yml`
 
 
 ### Installation
 
-- Execute the installation playbook
-```
-ansible-playbook playbooks/docker/install.yml
-```
+- Execute the installation playbook by running `ansible-playbook playbooks/docker/install.yml` command.
 
 
 ### Post installation
 
-- Execute the post-installation playbook
-```
-ansible-playbook playbooks/docker/post-install.yml
-```
+- Execute the post-installation playbook by running `ansible-playbook playbooks/docker/post-install.yml` command.
 
 
 ### Check installation
 
-- Execute the check playbook to get informations about your installation success.
-```
-ansible-playbook playbooks/docker/check.yml
-```
+- Execute the check playbook by running `ansible-playbook playbooks/docker/check.yml` command.
 
 
 ## AWS infrastructure 
 
-AWS infrastructure installation of S2I runtime mean you must be logged to a 
+AWS infrastructure installation of Docker runtime mean you must be logged to a 
 console in your system. (see [howto provision AWS OS](System.md#aws-infrastructure))
 
 
@@ -109,34 +87,22 @@ console in your system. (see [howto provision AWS OS](System.md#aws-infrastructu
   [provision AWS OS guide](System.md#aws-infrastructure).
 - Login as `root` user
 - Move under the `/tmp/containers-engines/resources/ansible` directory
-- Execute the pre-installation playbook
-```
-ansible-playbook playbooks/docker/pre-install.yml
-```
+- Execute the pre-installation playbook `ansible-playbook playbooks/docker/pre-install.yml`
 
 
 ### Installation
 
-- Execute the installation playbook
-```
-ansible-playbook playbooks/docker/install.yml
-```
+- Execute the installation playbook by running `ansible-playbook playbooks/docker/install.yml` command.
 
 
 ### Post installation
 
-- Execute the post-installation playbook
-```
-ansible-playbook playbooks/docker/post-install.yml
-```
+- Execute the post-installation playbook by running `ansible-playbook playbooks/docker/post-install.yml` command.
 
 
 ### Check installation
 
-- Execute the check playbook to get informations about your installation success.
-```
-ansible-playbook playbooks/docker/check.yml
-```
+- Execute the check playbook by running `ansible-playbook playbooks/docker/check.yml` command.
 
 
 ## Test runtime

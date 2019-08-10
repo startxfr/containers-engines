@@ -1,9 +1,9 @@
 # containers-engines : System basic
 
 
-Guideline on how to provision and setup various systems environments on 
-[physical OS](#physical-infrastructure), [virtual OS](#virtual-infrastructure) or 
-[AWS OS](#aws-infrastructure).
+Guideline on how to provision and setup various operating systems ([Centos](#centos), [Fedora](#fedora)
+or [RHEL](#rhel)) on [physical infrastructure](#physical-infrastructure), 
+[virtual infrastructure](#virtual-infrastructure) or [AWS infrastructure](#aws-infrastructure).
 
 
 ## Physical infrastructure
@@ -18,7 +18,13 @@ Guideline on how to provision and setup various systems environments on
 - plug a bootable Linux USB key ([centos](https://wiki.centos.org/HowTos/InstallFromUSBkey)
   or [fedora](https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB/fr))
 - Execute a minimal installation following the OS installation guide
-- After basic installation, log as `root` user and update system packages
+- After basic installation, login as *root* user with a `su root` command
+- Install ansible and git by running the `yum install -y ansible git` command
+- Clone this git repository using `git clone https://github.com/startxfr/containers-engines.git` command
+- Move to the script directory with `cd containers-engines/resources/ansible`
+- Execute this pre-installation playbook by running `ansible-playbook playbooks/system/pre-install.yml`
+
+You can use the following script to perform all theses actions in one operation.
 ```
 su root
 yum update -y
@@ -26,30 +32,23 @@ yum install -y ansible git
 git clone https://github.com/startxfr/containers-engines.git
 cd containers-engines/resources/ansible
 ansible-playbook playbooks/system/pre-install.yml
+
 ```
 
 ### Installation
 
-- Execute the installation playbook to get an updated system with basic tools
-  installed.
-```
-ansible-playbook playbooks/system/install.yml
-```
+- Execute the installation playbook with `ansible-playbook playbooks/system/install.yml`
+  command to get an updated system with basic tools installed. 
 
 ### Post installation
 
-- Execute the post-installation playbook to get an updated system with basic tools
-  installed.
-```
-ansible-playbook playbooks/system/post-install.yml
-```
+- Execute the post-installation playbook by running the `ansible-playbook playbooks/system/post-install.yml`
+  command
 
 ### Check installation
 
-- Execute the check playbook to get informations about your installation success.
-```
-ansible-playbook playbooks/system/check.yml
-```
+- Execute the check playbook with `ansible-playbook playbooks/system/check.yml` command
+  to get informations about your installation success.
 
 
 ## Virtual infrastructure
@@ -62,7 +61,13 @@ ansible-playbook playbooks/system/check.yml
 - Boot a minimal ISO install image ([centos](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso)
   or [fedora](https://getfedora.org/fr/workstation/download/))
 - Execute a minimal installation following the OS installation guide
-- After basic installation, log as `root` user and update system packages
+- After basic installation, login as *root* user with a `su root` command
+- Install ansible and git by running the `yum install -y ansible git` command
+- Clone this git repository using `git clone https://github.com/startxfr/containers-engines.git` command
+- Move to the script directory with `cd containers-engines/resources/ansible`
+- Execute this pre-installation playbook by running `ansible-playbook playbooks/system/pre-install.yml`
+
+You can use the following script to perform all theses actions in one operation.
 ```
 su root
 yum update -y
@@ -70,30 +75,23 @@ yum install -y ansible git
 git clone https://github.com/startxfr/containers-engines.git
 cd containers-engines/resources/ansible
 ansible-playbook playbooks/system/pre-install.yml
+
 ```
 
 ### Installation
 
-- Execute the installation playbook to get an updated system with basic tools
-  installed.
-```
-ansible-playbook playbooks/system/install.yml
-```
+- Execute the installation playbook with `ansible-playbook playbooks/system/install.yml`
+  command to get an updated system with basic tools installed. 
 
 ### Post installation
 
-- Execute the post-installation playbook to get an updated system with basic tools
-  installed.
-```
-ansible-playbook playbooks/system/post-install.yml
-```
+- Execute the post-installation playbook by running the `ansible-playbook playbooks/system/post-install.yml`
+  command
 
 ### Check installation
 
-- Execute the check playbook to get informations about your installation success.
-```
-ansible-playbook playbooks/system/check.yml
-```
+- Execute the check playbook with `ansible-playbook playbooks/system/check.yml` command
+  to get informations about your installation success.
 
 
 ## AWS infrastructure
@@ -110,7 +108,13 @@ ansible-playbook playbooks/system/check.yml
 - Under the `service` menu, select `EC2`, then select `create instance`
 - ...
 - ...
-- After basic installation, log as `root` user and update system packages
+- After basic installation, login as *root* user with a `su root` command
+- Install ansible and git by running the `yum install -y ansible git` command
+- Clone this git repository using `git clone https://github.com/startxfr/containers-engines.git` command
+- Move to the script directory with `cd containers-engines/resources/ansible`
+- Execute this pre-installation playbook by running `ansible-playbook playbooks/system/pre-install.yml`
+
+You can use the following script to perform all theses actions in one operation.
 ```
 su root
 yum update -y
@@ -118,30 +122,35 @@ yum install -y ansible git
 git clone https://github.com/startxfr/containers-engines.git
 cd containers-engines/resources/ansible
 ansible-playbook playbooks/system/pre-install.yml
+
 ```
 
 ### Installation
 
-- Execute the installation playbook to get an updated system with basic tools
-  installed.
-```
-ansible-playbook playbooks/system/install.yml
-```
+- Execute the installation playbook with `ansible-playbook playbooks/system/install.yml`
+  command to get an updated system with basic tools installed. 
 
 ### Post installation
 
-- Execute the post-installation playbook to get an updated system with basic tools
-  installed.
-```
-ansible-playbook playbooks/system/post-install.yml
-```
+- Execute the post-installation playbook by running the `ansible-playbook playbooks/system/post-install.yml`
+  command
 
 ### Check installation
 
-- Execute the check playbook to get informations about your installation success.
-```
-ansible-playbook playbooks/system/check.yml
-```
+- Execute the check playbook with `ansible-playbook playbooks/system/check.yml` command
+  to get informations about your installation success.
+
+
+## Supported operating systems
+
+
+### Centos
+
+### Fedora
+
+### RHEL
+
+
 
 ## Remove installation
 
