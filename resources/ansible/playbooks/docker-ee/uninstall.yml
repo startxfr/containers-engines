@@ -1,0 +1,18 @@
+- name: "Uninstall docker Enterprise tools and environment"
+  hosts: 'all'
+  gather_facts: true
+  remote_user: startx
+  become_method: sudo
+  become: yes
+  vars:
+    docker_edition: 'ee'
+    docker_package_state: absent
+    docker_install_compose: false
+  roles:
+    - geerlingguy.docker
+  tasks:
+  - name: Uninstall roles from Ansible Galaxy
+    command: ansible-galaxy uninstall {{ item }}
+    with_items:
+      - geerlingguy.pip
+      - geerlingguy.docker

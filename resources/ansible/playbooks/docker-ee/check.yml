@@ -1,0 +1,8 @@
+- name: "Check docker Enterprise installation"
+  hosts: 'all'
+  gather_facts: true
+  remote_user: startx
+  become_method: sudo
+  tasks:
+  - name: Display system informations
+    debug: msg={{ ansible_facts }}
