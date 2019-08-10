@@ -142,3 +142,14 @@ ansible-playbook playbooks/system/post-install.yml
 ```
 ansible-playbook playbooks/system/check.yml
 ```
+
+## Remove installation
+
+After having installed and tested the various containers runtimes 
+environements ([docker](Docker.md), [docker Enterprise](DockerEE.md), 
+[podman](Podman.md), [s2i](S2I.md), [kubernetes](Kubernetes.md) 
+and [openshift Enterprise](Openshift.md)) you can remove the temporary contents
+used by this tools by running the following command :
+```
+ansible-playbook playbooks/system/uninstall.yml
+```

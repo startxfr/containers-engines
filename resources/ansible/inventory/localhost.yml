@@ -2,4 +2,9 @@ all:
   hosts:
     localhost:
       ansible_connection: local
+  vars:
+    user_name: startx
+    group_name: startx
+    project_repository: https://github.com/startxfr/containers-engines.git
+    project_tmp_dir: /tmp/containers-engines
       

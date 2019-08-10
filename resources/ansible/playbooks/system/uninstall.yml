@@ -1,0 +1,21 @@
+- name: "Uninstall system tools and environment"
+  hosts: 'all'
+  gather_facts: false
+  remote_user: startx
+  become_method: sudo
+  become: yes
+  tasks:
+  - name: Remove basic tools
+    yum:
+      name:
+        - bash-completion
+        - git
+        - curl
+        - wget
+      state: absent
+  - name: Clean package cache
+    shell: yum clean all
+  - name: Remove {{ project_tmp_dir }}
+    file:
+      path: "{{ project_tmp_dir }}"
+      state: absent

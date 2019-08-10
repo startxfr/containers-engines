@@ -4,9 +4,6 @@
   remote_user: startx
   become_method: sudo
   become: yes
-  vars:
-    project_repository: https://github.com/startxfr/containers-engines.git
-    project_tmp_dir: /tmp/containers-engines
   tasks:
   - name: Create a copy of containers-engines in tmp/
     git:

@@ -1,9 +1,6 @@
 - name: "Pre-Install system tools and environment"
   hosts: 'all'
   gather_facts: false
-  vars:
-    user_name: startx
-    group_name: startx
   tasks:
   - name: Ensure group '{{ group_name }}' exists
     group:

@@ -1,0 +1,8 @@
+- name: "Pre-Install docker tools and environment"
+  hosts: 'all'
+  gather_facts: false
+  tasks:
+  - name: Ensure group '{{ group_name }}' exists
+    group:
+      name: "{{ group_name }}"
+      state: present

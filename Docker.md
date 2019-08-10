@@ -16,82 +16,140 @@ a Centos 7 environement.
 ## Physical infrastructure 
 
 Physical infrastructure installation of S2I runtime mean you must be logged to a console
-in your system. (see [provision physical OS](System.md#physical-infrastructure)))
+in your system. (see [howto provision physical OS](System.md#physical-infrastructure)))
 
 
 ### Pre installation
 
-*Docker runtime has no pre-installation tasks.*
+- having access to a physical computer installed following the 
+  [provision physical OS guide](System.md#physical-infrastructure).
+- Login as `root` user
+- Move under the `/tmp/containers-engines/resources/ansible` directory
+- Execute the pre-installation playbook
+```
+ansible-playbook playbooks/docker/pre-install.yml
+```
 
 
 ### Installation
 
-*Docker runtime has no installation tasks.*
+- Execute the installation playbook
+```
+ansible-playbook playbooks/docker/install.yml
+```
 
 
 ### Post installation
 
-*Docker runtime has no post-installation tasks.*
+- Execute the post-installation playbook
+```
+ansible-playbook playbooks/docker/post-install.yml
+```
 
 
 ### Check installation
 
-*Docker runtime has no check-installation tasks.*
+- Execute the check playbook to get informations about your installation success.
+```
+ansible-playbook playbooks/docker/check.yml
+```
 
 
 ## Virtual infrastructure 
 
 Virtual infrastructure installation of S2I runtime mean you must be logged to a 
-console in your system. (see [provision virtual OS](System.md#virtual-infrastructure))
+console in your system. (see [howto provision virtual OS](System.md#virtual-infrastructure))
 
 
 ### Pre installation
 
-*Docker runtime has no pre-installation tasks.*
+- having access to a virtual server installed following the 
+  [provision virtual OS guide](System.md#virtual-infrastructure).
+- Login as `root` user
+- Move under the `/tmp/containers-engines/resources/ansible` directory
+- Execute the pre-installation playbook
+```
+ansible-playbook playbooks/docker/pre-install.yml
+```
 
 
 ### Installation
 
-*Docker runtime has no installation tasks.*
+- Execute the installation playbook
+```
+ansible-playbook playbooks/docker/install.yml
+```
 
 
 ### Post installation
 
-*Docker runtime has no post-installation tasks.*
+- Execute the post-installation playbook
+```
+ansible-playbook playbooks/docker/post-install.yml
+```
 
 
 ### Check installation
 
-*Docker runtime has no check-installation tasks.*
+- Execute the check playbook to get informations about your installation success.
+```
+ansible-playbook playbooks/docker/check.yml
+```
 
 
 ## AWS infrastructure 
 
 AWS infrastructure installation of S2I runtime mean you must be logged to a 
-console in your system. (see [provision AWS OS](System.md#aws-infrastructure))
+console in your system. (see [howto provision AWS OS](System.md#aws-infrastructure))
 
 
 ### Pre installation
 
-*Docker runtime has no pre-installation tasks.*
+- having access to a AWS EC2 instance installed following the 
+  [provision AWS OS guide](System.md#aws-infrastructure).
+- Login as `root` user
+- Move under the `/tmp/containers-engines/resources/ansible` directory
+- Execute the pre-installation playbook
+```
+ansible-playbook playbooks/docker/pre-install.yml
+```
 
 
 ### Installation
 
-*Docker runtime has no installation tasks.*
+- Execute the installation playbook
+```
+ansible-playbook playbooks/docker/install.yml
+```
 
 
 ### Post installation
 
-*Docker runtime has no post-installation tasks.*
+- Execute the post-installation playbook
+```
+ansible-playbook playbooks/docker/post-install.yml
+```
 
 
 ### Check installation
 
-*Docker runtime has no check-installation tasks.*
+- Execute the check playbook to get informations about your installation success.
+```
+ansible-playbook playbooks/docker/check.yml
+```
 
 
 ## Test runtime
 
 *Docker runtime has no test-runtime tasks.*
+
+
+## Remove runtime
+
+After having tested this runtimes you can remove it by running the 
+following command :
+```
+ansible-playbook playbooks/docker/uninstall.yml
+```
+
 
