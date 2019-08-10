@@ -27,17 +27,11 @@ in your system. (see [howto provision physical OS](System.md#physical-infrastruc
   [provision physical OS guide](System.md#physical-infrastructure).
 - Login as `root` user
 - Move under the `/tmp/containers-engines/resources/ansible` directory
-- Execute the pre-installation playbook `ansible-playbook playbooks/podman/pre-install.yml`
 
 
 ### Installation
 
 - Execute the installation playbook by running `ansible-playbook playbooks/podman/install.yml` command.
-
-
-### Post installation
-
-- Execute the post-installation playbook by running `ansible-playbook playbooks/podman/post-install.yml` command.
 
 
 ### Check installation
@@ -57,17 +51,11 @@ console in your system. (see [howto provision virtual OS](System.md#virtual-infr
   [provision virtual OS guide](System.md#virtual-infrastructure).
 - Login as `root` user
 - Move under the `/tmp/containers-engines/resources/ansible` directory
-- Execute the pre-installation playbook `ansible-playbook playbooks/podman/pre-install.yml`
 
 
 ### Installation
 
 - Execute the installation playbook by running `ansible-playbook playbooks/podman/install.yml` command.
-
-
-### Post installation
-
-- Execute the post-installation playbook by running `ansible-playbook playbooks/podman/post-install.yml` command.
 
 
 ### Check installation
@@ -87,17 +75,11 @@ console in your system. (see [howto provision AWS OS](System.md#aws-infrastructu
   [provision AWS OS guide](System.md#aws-infrastructure).
 - Login as `root` user
 - Move under the `/tmp/containers-engines/resources/ansible` directory
-- Execute the pre-installation playbook `ansible-playbook playbooks/podman/pre-install.yml`
 
 
 ### Installation
 
 - Execute the installation playbook by running `ansible-playbook playbooks/podman/install.yml` command.
-
-
-### Post installation
-
-- Execute the post-installation playbook by running `ansible-playbook playbooks/podman/post-install.yml` command.
 
 
 ### Check installation

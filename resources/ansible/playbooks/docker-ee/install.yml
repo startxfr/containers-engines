@@ -15,6 +15,11 @@
     docker_users:
       - "{{ user_name }}"
   tasks:
+  - name: Install roles from Ansible Galaxy
+    command: ansible-galaxy install {{ item }}
+    with_items:
+      - geerlingguy.pip
+      - geerlingguy.docker
   - name: Ensure geerlingguy.pip role is installed
     include_role: 
       name: geerlingguy.pip

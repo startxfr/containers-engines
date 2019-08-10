@@ -5,6 +5,10 @@
   become_method: sudo
   become: yes
   tasks:
+  - name: Install roles from Ansible Galaxy
+    command: ansible-galaxy install {{ item }}
+    with_items:
+      - ikke_t.podman_container_systemd
   - name: ensure podman runtime packages are installed
     package:
       name: 

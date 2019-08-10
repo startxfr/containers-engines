@@ -1,6 +1,0 @@
-- name: "Post-Install docker Enterprise tools and environment"
-  hosts: 'all'
-  gather_facts: false
-  remote_user: startx
-  become_method: sudo
-  become: yes

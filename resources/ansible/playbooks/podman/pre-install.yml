@@ -1,8 +1,0 @@
-- name: "Pre-Install podman tools and environment"
-  hosts: 'all'
-  gather_facts: false
-  tasks:
-  - name: Install roles from Ansible Galaxy
-    command: ansible-galaxy install {{ item }}
-    with_items:
-      - ikke_t.podman_container_systemd
