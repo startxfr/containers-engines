@@ -1,0 +1,10 @@
+- name: Include kubernetes uninstall
+  import_playbook: kubernetes/uninstall.yml
+- name: Include s2i uninstall
+  import_playbook: s2i/uninstall.yml
+- name: Include podman uninstall
+  import_playbook: podman/uninstall.yml
+- name: Include docker uninstall
+  import_playbook: docker/uninstall.yml
+- name: Include system uninstall
+  import_playbook: system/uninstall.yml

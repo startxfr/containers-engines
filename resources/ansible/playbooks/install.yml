@@ -1,0 +1,14 @@
+- name: Include system pre-install
+  import_playbook: system/pre-install.yml
+- name: Include system install
+  import_playbook: system/install.yml
+- name: Include system post-install
+  import_playbook: system/post-install.yml
+- name: Include docker install
+  import_playbook: docker/install.yml
+- name: Include podman install
+  import_playbook: podman/install.yml
+- name: Include s2i install
+  import_playbook: s2i/install.yml
+- name: Include kubernetes install
+  import_playbook: kubernetes/install.yml
