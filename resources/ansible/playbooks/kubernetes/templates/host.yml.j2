@@ -1,0 +1,11 @@
+all:
+  hosts:
+    localhost:
+      kubernetes_version: '1.15'
+      kubernetes_version_rhel_package: '1.15.0'
+      kubernetes_yum_arch: x86_64
+      kubernetes_allow_pods_on_master: true
+      kubernetes_enable_web_ui: true
+#      kubernetes_role: node
+      kubernetes_role: master
+    
