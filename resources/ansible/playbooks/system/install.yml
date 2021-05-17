@@ -8,6 +8,7 @@
   - name: Update installed packages
     shell: yum update -y
     ignore_errors: yes
+    warn: false
   - name: Ensure basic tools are presents
     package:
       name:
