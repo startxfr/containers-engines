@@ -1,4 +1,4 @@
-# containers-engines : Openshift Container Platform
+# Openshift engine
 
 
 Documentation and installation guide to install openshift tools under
@@ -8,14 +8,14 @@ a RHEL 8 environement.
 ## Requirements
 
 - Having a basic knowledge of linux command line interface
-- Having access to your system environment (see [system install](System.md) 
+- Having access to your system environment (see [system install](../system) 
   if you don't already have a compliant system)
 
 
 ## Physical infrastructure 
 
 Physical infrastructure installation of S2I runtime mean you must be logged to a console
-in your system. (see [provision physical OS](System.md#physical-infrastructure)))
+in your system. (see [provision physical OS](../system#physical-infrastructure)))
 
 
 ### Pre installation
@@ -41,7 +41,7 @@ in your system. (see [provision physical OS](System.md#physical-infrastructure))
 ## Virtual infrastructure 
 
 Virtual infrastructure installation of S2I runtime mean you must be logged to a 
-console in your system. (see [provision virtual OS](System.md#virtual-infrastructure))
+console in your system. (see [provision virtual OS](../system#virtual-infrastructure))
 
 
 ### Pre installation
@@ -67,7 +67,7 @@ console in your system. (see [provision virtual OS](System.md#virtual-infrastruc
 ## AWS infrastructure 
 
 AWS infrastructure installation of S2I runtime mean you must be logged to a 
-console in your system. (see [provision AWS OS](System.md#aws-infrastructure))
+console in your system. (see [provision AWS OS](../system#aws-infrastructure))
 
 
 ### Pre installation

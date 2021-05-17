@@ -1,4 +1,4 @@
-site_name: STARTX Docker images repository
+site_name: STARTX Container engines
 docs_dir: ./docs
 theme:
   name: readthedocs
