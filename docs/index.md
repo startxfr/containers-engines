@@ -1,5 +1,8 @@
 # containers-engines
 
+[![STARTX Profile](https://img.shields.io/badge/provider-startx-green.svg)](https://github.com/startxfr) [![licence](https://img.shields.io/github/license/startxfr/containers-engines.svg)](https://github.com/startxfr/containers-engines) [![Sources](https://img.shields.io/badge/startxfr-containers--engines-blue.svg)](https://github.com/startxfr/containers-engines/tree/master/Services/apache/)
+[![last commit](https://img.shields.io/github/last-commit/startxfr/containers-engines.svg)](https://github.com/startxfr/containers-engines)
+
 Documentation and installation guides to setup various containers runtimes
 environements including [docker](Docker.md), [docker Enterprise](DockerEE.md),
 [podman](Podman.md), [s2i](S2I.md), [kubernetes](Kubernetes.md)
@@ -11,6 +14,8 @@ This project is focused on providing a set of guideline and scripts ready to use
 to help auditor geting various container environments. Theses runtimes are ready to use
 and users can immediatly run various container deployment scenarios using
 simple or advanced features according to the engine you used.
+
+After following theses guide, you could find some usefull container image to deploy in the [![Sources](https://img.shields.io/badge/startxfr-docker--images-blue.svg)](https://github.com/startxfr/docker-images) repository, or you can use the [![Sources](https://img.shields.io/badge/sxcm-cluster--manager-blue.svg)](https://sxcm.readthedocs.io) to create and manage Openshift cluster.
 
 ## Audience
 
