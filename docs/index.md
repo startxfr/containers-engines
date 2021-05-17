@@ -8,7 +8,7 @@ and [openshift Enterprise](Openshift.md).
 ## Purpose
 
 This project is focused on providing a set of guideline and scripts ready to use
-to help auditor geting various container environments. Theses runtimes are rady to use
+to help auditor geting various container environments. Theses runtimes are ready to use
 and users can immediatly run various container deployment scenarios using
 simple or advanced features according to the engine you used.
 
@@ -27,12 +27,12 @@ simple or advanced features according to the engine you used.
 ## Provided engines
 
 Before following one of theses container engine installation guide, read carefully our
-[system guide](System.md#supported-operating-systems) to get informations on
-supported [infrastructure plateforms](System.md) and 
-[operating systems](System.md#supported-operating-systems).
+[system guide](./system#supported-operating-systems) to get informations on
+supported [infrastructure plateforms](./system) and 
+[operating systems](./system#supported-operating-systems).
 
-| Engine         | Guide                          | Physical infra.                                      | Virtual infra.                                  | AWS infra.                                  |
-| -------------- | ------------------------------ | ---------------------------------------------------- | ----------------------------------------------- | ------------------------------------------- |
+| Engine         | Guide                       | Physical infra.                                   | Virtual infra.                               | AWS infra.                               |
+| -------------- | --------------------------- | ------------------------------------------------- | -------------------------------------------- | ---------------------------------------- |
 | **Docker**     | [install guide](docker)     | [single host](docker#physical-infrastructure)     | [single host](docker#virtual-infrastructure) | [single host](docker#aws-infrastructure) |
 | **Podman**     | [install guide](podman)     | [single host](podman#physical-infrastructure)     | [single host](podman#virtual-infrastructure) | [single host](podman#aws-infrastructure) |
 | **S2I**        | [install guide](s2i)        | [single host](s2i#physical-infrastructure)        | [single host](s2i#virtual-infrastructure)    | [single host](s2i#aws-infrastructure)    |
@@ -42,19 +42,33 @@ supported [infrastructure plateforms](System.md) and
 
 ## Terminology
 
-- **Container** : Is a description and filesystem using OS virtualization
-  (shared kernel) and leverage advanced OS features (cgroup, namespace, selinux)
-  to provide a portable and flexible way to execute various application runtimes.
-- **Container Runtime** : Set of tools used to execute container as defined in the OCI runtime-spec
-- **Container image** : Set of files containing a full filesystem ready to be excuted.
-  Metadata files embed within the image describe how to execute this container
-  as expected by his creator.
-  The files content and structure is defined in the OCI image-spec.
-- **Container engine** : Solution allowing to run container using multiple compute nodes
-  and providing a clusterized way to run multiples containers in a high-availability
-  environement.
-- **OCI** : The Open Container Initiative (OCI) is a Linux Foundation project
-  to define open specifications for Containers images (image-spec) and  runtimes (runtime-spec).
+### Container
+
+Is a description and filesystem using OS virtualization
+(shared kernel) and leverage advanced OS features (cgroup, namespace, selinux)
+to provide a portable and flexible way to execute various application runtimes.
+
+### Container Runtime
+
+Set of tools used to execute container as defined in the OCI runtime-spec
+
+### Container image
+
+Set of files containing a full filesystem ready to be excuted.
+Metadata files embed within the image describe how to execute this container
+as expected by his creator.
+The files content and structure is defined in the OCI image-spec.
+
+### Container engine
+
+Solution allowing to run container using multiple compute nodes
+and providing a clusterized way to run multiples containers in a high-availability
+environement.
+
+### OCI
+
+The Open Container Initiative (OCI) is a Linux Foundation project
+to define open specifications for Containers images (image-spec) and  runtimes (runtime-spec).
 
 ## Authors
 

@@ -5,7 +5,6 @@ Documentation and installation guide on how to install kubernetes
 tools under a RedHat like distribution environement (see [system guide](../system#supported-operating-systems) 
 for more information on supported [infrastructure plateforms](../system) and [operating systems](../system#supported-operating-systems)).
 
-
 ## Requirements
 
 - Having a basic knowledge of linux command line interface
@@ -14,12 +13,10 @@ for more information on supported [infrastructure plateforms](../system) and [op
   ([physical](../system#physical-infrastructure), [virtual](../system#virtual-infrastructure)
   or [AWS](../system#aws-infrastructure))
 
-
-## Physical infrastructure 
+## Physical infrastructure
 
 Physical infrastructure installation of Kubernetes runtime mean you must be logged to a console
 in your system. (see [howto provision physical OS](../system#physical-infrastructure))
-
 
 ### Pre installation
 
@@ -28,22 +25,18 @@ in your system. (see [howto provision physical OS](../system#physical-infrastruc
 - Login as `root` user
 - Move under the `/tmp/containers-engines/resources/ansible` directory
 
-
 ### Installation
 
 - Execute the installation playbook by running `ansible-playbook playbooks/kubernetes/install.yml` command.
-
 
 ### Check installation
 
 - Execute the check playbook by running `ansible-playbook playbooks/kubernetes/check.yml` command.
 
-
-## Virtual infrastructure 
+## Virtual infrastructure
 
 Virtual infrastructure installation of Kubernetes runtime mean you must be logged to a 
 console in your system. (see [howto provision virtual OS](../system#virtual-infrastructure))
-
 
 ### Pre installation
 
@@ -52,45 +45,37 @@ console in your system. (see [howto provision virtual OS](../system#virtual-infr
 - Login as `root` user
 - Move under the `/tmp/containers-engines/resources/ansible` directory
 
-
 ### Installation
 
 - Execute the installation playbook by running `ansible-playbook playbooks/kubernetes/install.yml` command.
-
 
 ### Check installation
 
 - Execute the check playbook by running `ansible-playbook playbooks/kubernetes/check.yml` command.
 
-
-## AWS infrastructure 
+## AWS infrastructure
 
 AWS infrastructure installation of Kubernetes runtime mean you must be logged to a 
 console in your system. (see [howto provision AWS OS](../system#aws-infrastructure))
 
-
 ### Pre installation
 
-- having access to a AWS EC2 instance installed following the 
+- having access to a AWS EC2 instance installed following the
   [provision AWS OS guide](../system#aws-infrastructure).
 - Login as `root` user
 - Move under the `/tmp/containers-engines/resources/ansible` directory
-
 
 ### Installation
 
 - Execute the installation playbook by running `ansible-playbook playbooks/kubernetes/install.yml` command.
 
-
 ### Check installation
 
 - Execute the check playbook by running `ansible-playbook playbooks/kubernetes/check.yml` command.
 
-
 ## Test runtime
 
 *Kubernetes runtime has no test-runtime tasks.*
-
 
 ## Remove runtime
 
@@ -99,4 +84,3 @@ following command :
 ```
 ansible-playbook playbooks/kubernetes/uninstall.yml
 ```
-
