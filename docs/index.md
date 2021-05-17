@@ -33,12 +33,12 @@ supported [infrastructure plateforms](System.md) and
 
 | Engine         | Guide                          | Physical infra.                                      | Virtual infra.                                  | AWS infra.                                  |
 | -------------- | ------------------------------ | ---------------------------------------------------- | ----------------------------------------------- | ------------------------------------------- |
-| **Docker**     | [install guide](Docker.md)     | [single host](Docker.md#physical-infrastructure)     | [single host](Docker.md#virtual-infrastructure) | [single host](Docker.md#aws-infrastructure) |
-| **Podman**     | [install guide](Podman.md)     | [single host](Podman.md#physical-infrastructure)     | [single host](Podman.md#virtual-infrastructure) | [single host](Podman.md#aws-infrastructure) |
-| **S2I**        | [install guide](S2I.md)        | [single host](S2I.md#physical-infrastructure)        | [single host](S2I.md#virtual-infrastructure)    | [single host](S2I.md#aws-infrastructure)    |
-| **DockerEE**   | [install guide](DockerEE.md)   | [single host](DockerEE.md#physical-infrastructure)   | [cluster](DockerEE.md#virtual-infrastructure)   | [cluster](DockerEE.md#aws-infrastructure)   |
-| **Kubernetes** | [install guide](Kubernetes.md) | [single host](Kubernetes.md#physical-infrastructure) | [cluster](Kubernetes.md#virtual-infrastructure) | [cluster](Kubernetes.md#aws-infrastructure) |
-| **Openshift**  | [install guide](Openshift.md)  | [single host](Openshift.md#physical-infrastructure)  | [cluster](Openshift.md#virtual-infrastructure)  | [cluster](Openshift.md#aws-infrastructure)  |
+| **Docker**     | [install guide](docker)     | [single host](docker#physical-infrastructure)     | [single host](docker#virtual-infrastructure) | [single host](docker#aws-infrastructure) |
+| **Podman**     | [install guide](podman)     | [single host](podman#physical-infrastructure)     | [single host](podman#virtual-infrastructure) | [single host](podman#aws-infrastructure) |
+| **S2I**        | [install guide](s2i)        | [single host](s2i#physical-infrastructure)        | [single host](s2i#virtual-infrastructure)    | [single host](s2i#aws-infrastructure)    |
+| **DockerEE**   | [install guide](dockerEE)   | [single host](dockerEE#physical-infrastructure)   | [cluster](dockerEE#virtual-infrastructure)   | [cluster](dockerEE#aws-infrastructure)   |
+| **Kubernetes** | [install guide](kubernetes) | [single host](kubernetes#physical-infrastructure) | [cluster](kubernetes#virtual-infrastructure) | [cluster](kubernetes#aws-infrastructure) |
+| **Openshift**  | [install guide](openshift)  | [single host](openshift#physical-infrastructure)  | [cluster](openshift#virtual-infrastructure)  | [cluster](openshift#aws-infrastructure)  |
 
 ## Terminology
 
@@ -66,6 +66,6 @@ Fedora (26, 27, 28, 29, 30, 31, 32, 33, 34, rawhide), Centos (6, 7, 8), Alpine 3
 
 ## License
 
-This project is licensed under the GPL Version 3 - see the 
-[LICENSE.md](https://github.com/startxfr/sxapi-core/tree/dev/docs/LICENSE.md)
+This project is licensed under the GPL Version 3 - see the
+[Licence](https://github.com/startxfr/containers-engines/blob/master/LICENSE)
 file for more details.
